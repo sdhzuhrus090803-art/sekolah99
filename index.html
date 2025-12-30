@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Website resmi Sekolah Unggulan - Memberikan pendidikan berkualitas untuk masa depan yang cerah">
+    <meta name="keywords" content="sekolah, pendidikan, belajar, siswa, guru, kurikulum">
+    <meta name="author" content="Sekolah Unggulan">
+    <title>SMA NEGERI SUKA MAJU SURABAYA - Membangun Generasi Unggul</title>
+    
+    <!-- Font Awesome untuk ikon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- AOS untuk animasi -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #1c970e;
+            --secondary-color: #2980b9;
+            --accent-color: #e74c3c;
+            --dark-color: #076829;
+            --light-color: #ecf0f1;
+            --text-color: #000000;
+            --bg-color: #f8f9fa;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            overflow-x: hidden;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 5%;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .school-name {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-item {
+            margin-left: 25px;
+        }
+        
+        .nav-link {
+            text-decoration: none;
+            color: var(--dark-color);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--primary-color);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .bar {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark-color);
+            margin: 3px 0;
+            transition: 0.3s;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("Foto/foto\ 22\ bg\ 1.jpeg");
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero-title {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            animation: fadeInDown 1s ease;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: fadeIn 1.5s ease;
+        }
+        
+        .cta-button {
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+        
+        .cta-primary {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .cta-primary:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        .cta-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .cta-secondary:hover {
+            background-color: white;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Section Styles */
+        section {
+            padding: 80px 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* Profile Section */
+        .profile-tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+        
+        .tab-button {
+            background-color: transparent;
+            border: none;
+            padding: 10px 25px;
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--dark-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab-button.active {
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .profile-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            text-align: justify;
+        }
+        
+        /* Academic Section */
+        .academic-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .academic-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .academic-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .academic-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .academic-content {
+            padding: 20px;
+        }
+        
+        .academic-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .academic-description {
+            color: #666;
+            margin-bottom: 15px;
+        }
+        
+        .academic-link {
+            color: var(--primary-color);
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .academic-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .academic-link i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .academic-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* News Section */
+        .news-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .news-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .news-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+        }
+        
+        .news-image {
+            height: 200px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .news-content {
+            padding: 20px;
+        }
+        
+        .news-date {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .news-date i {
+            margin-right: 5px;
+        }
+        
+        .news-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .news-description {
+            color: #666;
+            margin-bottom: 15px;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .news-link {
+            color: var(--primary-color);
+            font-weight: 500;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+        
+        .news-link:hover {
+            color: var(--secondary-color);
+        }
+        
+        .news-link i {
+            margin-left: 5px;
+            transition: transform 0.3s ease;
+        }
+        
+        .news-link:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* Gallery Section */
+        .gallery-filter {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .filter-button {
+            background-color: transparent;
+            border: 1px solid var(--primary-color);
+            padding: 8px 20px;
+            margin: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            color: var(--primary-color);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 50px;
+        }
+        
+        .filter-button.active,
+        .filter-button:hover {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+        
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 250px;
+            cursor: pointer;
+        }
+        
+        .gallery-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .gallery-item:hover .gallery-image {
+            transform: scale(1.1);
+        }
+        
+        .gallery-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-align: center;
+        }
+        
+        .gallery-icon {
+            font-size: 2rem;
+            color: white;
+        }
+        
+        /* Contact Section */
+        .contact-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+        
+        .contact-info {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 25px;
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 20px;
+            font-size: 1.2rem;
+        }
+        
+        .contact-text h3 {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+            color: var(--dark-color);
+        }
+        
+        .contact-text p {
+            color: #666;
+        }
+        
+        .contact-form {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary-color);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+        }
+        
+        textarea.form-control {
+            resize: vertical;
+            min-height: 120px;
+        }
+        
+        .form-button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .form-button:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .map-container {
+            margin-top: 40px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            height: 400px;
+        }
+        
+        .map-container iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #bbb;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+            transform: translateX(5px);
+        }
+        
+        .footer-links a i {
+            margin-right: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
+        }
+        
+        .social-link {
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        /* Back to Top Button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 999;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+        
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background-color: white;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
+                padding: 20px 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-item {
+                margin: 15px 0;
+            }
+            
+            .hamburger {
+                display: flex;
+            }
+            
+            .hamburger.active .bar:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .hamburger.active .bar:nth-child(1) {
+                transform: translateY(8px) rotate(45deg);
+            }
+            
+            .hamburger.active .bar:nth-child(3) {
+                transform: translateY(-8px) rotate(-45deg);
+            }
+            
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .profile-tabs {
+                flex-wrap: wrap;
+            }
+            
+            .tab-button {
+                margin-bottom: 10px;
+            }
+            
+            .news-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .footer-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="header-container">
+            <div class="logo-container">
+                <img src="Foto/bg 1.jpg" alt="Logo Sekolah" class="logo">
+                <div class="school-name">SMA NEGERI SUKA MAJU SURABAYA</div>
+            </div>
+            <nav>
+                <ul class="nav-menu" id="navMenu">
+                    <li class="nav-item"><a href="#beranda" class="nav-link">Beranda</a></li>
+                    <li class="nav-item"><a href="#profil" class="nav-link">Profil</a></li>
+                    <li class="nav-item"><a href="#akademik" class="nav-link">Akademik</a></li>
+                    <li class="nav-item"><a href="#berita" class="nav-link">Berita</a></li>
+                    <li class="nav-item"><a href="#galeri" class="nav-link">Galeri</a></li>
+                    <li class="nav-item"><a href="#kontak" class="nav-link">Kontak</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="beranda" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">SELAMAT DATANG</h1>
+            <h2 class="hero-subtitle">di SMA NEGERI SUKA MAJU SURABAYA</h2>
+            <div class="cta-buttons">
+                <a href="#kontak" class="cta-button cta-primary">Daftar Sekarang</a>
+                <a href="#kontak" class="cta-button cta-secondary">Hubungi Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Profile Section -->
+    <section id="profil" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Profil Sekolah</h2>
+            <div class="profile-tabs" data-aos="fade-up" data-aos-delay="100">
+                <button class="tab-button active" onclick="openTab(event, 'visi')">Visi</button>
+                <button class="tab-button" onclick="openTab(event, 'misi')">Misi</button>
+                <button class="tab-button" onclick="openTab(event, 'sejarah')">Sejarah</button>
+            </div>
+            <div id="visi" class="tab-content active" data-aos="fade-up" data-aos-delay="200">
+                <p class="profile-text">
+                    Menjadi sekolah unggulan yang menghasilkan lulusan berkualitas, berakhlak mulia, berwawasan global, dan mampu bersaing di era digital. Kami berkomitmen untuk menciptakan lingkungan belajar yang inovatif, inklusif, dan mendukung pengembangan potensi setiap siswa secara maksimal. Dengan pendekatan pembelajaran berbasis teknologi dan nilai-nilai karakter, kami mempersiapkan generasi muda untuk menjadi pemimpin masa depan yang tangguh dan berintegritas.
+                </p>
+            </div>
+            <div id="misi" class="tab-content" data-aos="fade-up" data-aos-delay="200">
+                <p class="profile-text">
+                    1. Menyelenggarakan pendidikan berkualitas dengan kurikulum yang relevan dan inovatif.<br>
+                    2. Mengembangkan potensi akademik, non-akademik, dan karakter siswa secara seimbang.<br>
+                    3. Menciptakan lingkungan belajar yang kondusif, aman, dan menyenangkan.<br>
+                    4. Meningkatkan kompetensi guru dan staf melalui pelatihan berkelanjutan.<br>
+                    5. Membangun kerjasama dengan orang tua dan masyarakat untuk mendukung pendidikan siswa.<br>
+                    6. Mengintegrasikan teknologi dalam pembelajaran untuk persiapan era digital.<br>
+                    7. Menumbuhkan jiwa kepemimpinan, kewirausahaan, dan kepedulian sosial pada siswa.
+                </p>
+            </div>
+            <div id="sejarah" class="tab-content" data-aos="fade-up" data-aos-delay="200">
+                <p class="profile-text">
+                    SMA NEGERI 99 SURABAYA didirikan pada tahun 2018 dengan komitmen untuk memberikan pendidikan berkualitas tinggi bagi generasi muda. Dimulai dengan hanya 3 kelas dan 75 siswa, sekolah kami telah berkembang pesat menjadi institusi pendidikan terkemuka dengan lebih dari 1000 siswa dan 99 guru profesional.<br><br>
+                    
+                    Sejak awal pendiriannya, kami selalu berinovasi dalam metode pengajaran dan kurikulum untuk mengikuti perkembangan zaman. Pada tahun 2019, kami menjadi salah satu sekolah pertama di wilayah ini yang mengintegrasikan teknologi dalam pembelajaran sehari-hari. Pada tahun 2019, kami meraih akreditasi A dan beberapa penghargaan tingkat nasional untuk kategori sekolah berprestasi.<br><br>
+                    
+                    Hari ini, SMA NEGERI SUKA MAJU SURABAYA terus melanjutkan warisan inovasi dan keunggulan, mempersiapkan siswa untuk menghadapi tantangan masa depan dengan pondasi pendidikan yang kuat, karakter yang mulia, dan keterampilan abad 21 yang relevan.
+                </p>
+            </div>
+        </div>
+    </section> 
+
+    <!-- Academic Section -->
+    <section id="akademik" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Program Akademik</h2>
+            <div class="academic-grid">
+                <div class="academic-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="Foto/foto 16 (ipa).jpeg" alt="IPA" class="academic-image">
+                    <div class="academic-content">
+                        <h3 class="academic-title">Ilmu Pengetahuan Alam</h3>
+                        <p class="academic-description">Program studi yang fokus pada pengembangan pemahaman tentang fenomena alam melalui metode ilmiah dan eksperimen praktis.</p>
+                        <a href="ipa.html" class="academic-link">Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="academic-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="Foto/foto 17 (ips).jpeg" alt="IPS" class="academic-image">
+                    <div class="academic-content">
+                        <h3 class="academic-title">Ilmu Pengetahuan Sosial</h3>
+                        <p class="academic-description">Program yang mengeksplorasi hubungan antar manusia, masyarakat, dan lingkungan sosial untuk memahami dinamika global.</p>
+                        <a href="ips.html" class="academic-link">Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="academic-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="Foto/foto 18 (bahasa).jpeg" alt="Bahasa" class="academic-image">
+                    <div class="academic-content">
+                        <h3 class="academic-title">Bahasa dan Sastra</h3>
+                        <p class="academic-description">Program yang mengembangkan kemampuan komunikasi, analisis teks, dan apresiasi sastra dalam berbagai bahasa.</p>
+                        <a href="bahasa dan sastra.html" class="academic-link">Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="academic-card" data-aos="fade-up" data-aos-delay="400">
+                    <img src="Foto/foto 19 (mtk).jpeg" alt="Matematika" class="academic-image">
+                    <div class="academic-content">
+                        <h3 class="academic-title">Matematika</h3>
+                        <p class="academic-description">Program yang membangun pemahaman konsep matematis, kemampuan berpikir logis, dan pemecahan masalah kuantitatif.</p>
+                        <a href="mtk.html" class="academic-link">Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="academic-card" data-aos="fade-up" data-aos-delay="500">
+                    <img src="Foto/foto 20 (inf).jpeg" alt="Teknologi" class="academic-image">
+                    <div class="academic-content">
+                        <h3 class="academic-title">Teknologi Informasi</h3>
+                        <p class="academic-description">Program yang mempersiapkan siswa dengan keterampilan digital, pemrograman, dan pemahaman tentang teknologi modern.</p>
+                        <a href="teknologi da informasi.html" class="academic-link">Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="academic-card" data-aos="fade-up" data-aos-delay="600">
+                    <img src="Foto/foto 21 (sbk).jpeg" alt="Seni" class="academic-image">
+                    <div class="academic-content">
+                        <h3 class="academic-title">Seni dan Budaya</h3>
+                        <p class="academic-description">Program yang mengekspresikan kreativitas melalui berbagai media seni dan memahami nilai-nilai budaya lokal maupun global.</p>
+                        <a href="sbk.html" class="academic-link">Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section id="berita" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Berita dan Pengumuman</h2>
+            <div class="news-grid">
+                <div class="news-card" data-aos="fade-up" data-aos-delay="100">
+                    <img src="Foto/foto2.jpeg" alt="Berita 1" class="news-image">
+                    <div class="news-content">
+                        <div class="news-date"><i class="far fa-calendar"></i> 15 Juni 2025</div>
+                        <h3 class="news-title">Prestasi Gemilang di Olimpiade Sains Nasional</h3>
+                        <p class="news-description">Tim olimpiade sains sekolah kita berhasil meraih 3 medali emas dan 2 perak dalam kompetisi tingkat nasional yang diikuti oleh lebih dari 500 sekolah se-Indonesia. Prestasi ini membuktikan kualitas pendidikan dan pembinaan siswa di bidang sains yang konsisten dilakukan.</p>
+                        <a href="#" class="news-link">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="news-card" data-aos="fade-up" data-aos-delay="200">
+                    <img src="Foto/foto4.jpeg" alt="Berita 2" class="news-image">
+                    <div class="news-content">
+                        <div class="news-date"><i class="far fa-calendar"></i> 10 Juni 2025</div>
+                        <h3 class="news-title">Program Beasiswa Prestasi Tahun Ajaran 2024/2025</h3>
+                        <p class="news-description">Sekolah kita kembali membuka pendaftaran program beasiswa prestasi untuk siswa berprestasi dengan kategori beasiswa akademik, non-akademik, dan ekonomi. Pendaftaran dibuka hingga 30 Juni 2025 dengan kuota terbatas. Informasi lengkap dapat diakses melalui website sekolah.</p>
+                        <a href="#" class="news-link">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div> 
+                </div>
+                <div class="news-card" data-aos="fade-up" data-aos-delay="300">
+                    <img src="Foto/foto1.jpeg" alt="Berita 3" class="news-image">
+                    <div class="news-content">
+                        <div class="news-date"><i class="far fa-calendar"></i> 28 Juni 2025</div>
+                        <h3 class="news-title">Kerjasama dengan Universitas Terkemuka untuk Program Pengembangan Guru</h3>
+                        <p class="news-description">Sekolah kita menjalin kerjasama dengan tiga universitas terkemuka untuk program pengembangan kompetensi guru. Program ini bertujuan untuk meningkatkan kualitas pengajaran dan pembelajaran melalui pelatihan, workshop, dan sertifikasi internasional bagi para pendidik.</p>
+                        <a href="#" class="news-link">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="galeri" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Galeri Kegiatan</h2>
+            <div class="gallery-filter" data-aos="fade-up" data-aos-delay="100">
+                <button class="filter-button active" onclick="filterGallery('all')">Semua</button>
+                <button class="filter-button" onclick="filterGallery('akademik')">Akademik</button>
+                <button class="filter-button" onclick="filterGallery('ekstrakurikuler')">Ekstrakurikuler</button>
+                <button class="filter-button" onclick="filterGallery('event')">Event</button>
+                <button class="filter-button" onclick="filterGallery('fasilitas')">Fasilitas</button>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" data-category="akademik" data-aos="fade-up" data-aos-delay="100">
+                    <img src="Foto/foto7.jpeg" alt="Kegiatan Akademik" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Kegiatan Praktikum Bahasa Arab</h3>
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="ekstrakurikuler" data-aos="fade-up" data-aos-delay="200">
+                    <img src="Foto/foto 6 .jpeg" alt="Kegiatan Ekstrakurikuler" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Latihan Futsal Sekolah</h3>
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="300">
+                    <img src="Foto/foto10.jpeg" alt="Event Sekolah" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Majlis Dzikir Di Sekolah</h3>
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fasilitas" data-aos="fade-up" data-aos-delay="400">
+                    <img src="Foto/foto14.jpeg" alt="Fasilitas Sekolah" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Laboratorium Komputer</h3>
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="akademik" data-aos="fade-up" data-aos-delay="500">
+                    <img src="Foto/foto8.jpeg" alt="Kegiatan Akademik" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Debat Bahasa Inggris</h3>
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="ekstrakurikuler" data-aos="fade-up" data-aos-delay="600">
+                    <img src="Foto/foto12.jpeg" alt="Kegiatan Ekstrakurikuler" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Pertandingan Badminthon Putri</h3>
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="event" data-aos="fade-up" data-aos-delay="700">
+                    <img src="Foto/foto5.jpeg" alt="Event Sekolah" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Malam Literasi</h3>
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+                <div class="gallery-item" data-category="fasilitas" data-aos="fade-up" data-aos-delay="800">
+                    <img src="Foto/foto13.jpeg" alt="Fasilitas Sekolah" class="gallery-image">
+                    <div class="gallery-overlay">
+                        <h3 class="gallery-title">Perpustakaan Modern</h3>
+                        <i class="fas fa-search-plus gallery-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="kontak" class="section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Hubungi Kami</h2>
+            <div class="contact-container">
+                <div class="contact-info" data-aos="fade-up" data-aos-delay="100">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Alamat</h3>
+                            <p>Jl. Kudaterbang No. 123, Kelurahan Sukamaju, Kecamatan Wlingi, Kota Surabaya, Provinsi Jawa Timur 12345</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Telepon</h3>
+                            <p>(021) 12345678</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Email</h3>
+                            <p>info@SMANSUKAMAJU.sch.id</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h3>Jam Operasional</h3>
+                            <p>Senin - Jumat: 07:00 - 16:00<br>Sabtu: 07:00 - 13:00</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="contact-form" data-aos="fade-up" data-aos-delay="200">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nama Lengkap</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject">Subjek</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Pesan</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        <button type="submit" class="form-button">Kirim Pesan</button>
+                    </form>
+                </div>
+            </div>
+            <div class="map-container" data-aos="fade-up" data-aos-delay="300">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.521260322283!2d106.8195613507864!3d-6.194741395493371!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e69f5390917b759%3A0x6b45e67356080477!2sMonas!5e0!3m2!1sen!2sid!4v1627593788395!5m2!1sen!2sid" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Tentang Sekolah</h3>
+                    <p>SMA NEGERI SUKA MAJU SURABAYA adalah institusi pendidikan yang berkomitmen untuk menghasilkan lulusan berkualitas, berakhlak mulia, dan siap menghadapi tantangan masa depan.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Link Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="#beranda"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+                        <li><a href="#profil"><i class="fas fa-chevron-right"></i> Profil</a></li>
+                        <li><a href="#akademik"><i class="fas fa-chevron-right"></i> Akademik</a></li>
+                        <li><a href="#berita"><i class="fas fa-chevron-right"></i> Berita</a></li>
+                        <li><a href="#galeri"><i class="fas fa-chevron-right"></i> Galeri</a></li>
+                        <li><a href="#kontak"><i class="fas fa-chevron-right"></i> Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Informasi</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Pendaftaran Siswa Baru</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Kalender Akademik</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Beasiswa</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Karir</a></li>
+                        <li><a href="#"><i class="fas fa-chevron-right"></i> Alumni</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak</h3>
+                    <ul class="footer-links">
+                        <li><a href="#"><i class="fas fa-map-marker-alt"></i> Jl. Kudaterbang No. 123, Kota Surabaya</a></li>
+                        <li><a href="tel:(021)12345678"><i class="fas fa-phone"></i> (021) 12345678</a></li>
+                        <li><a href="mailto:info@sekolahunggulan.sch.id"><i class="fas fa-envelope"></i> info@SMANSUKAMAJU.sch.id</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 SMA NEGERI SUKA MAJU SURABAYA. Hak Cipta Dilindungi.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <div class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            once: true
+        });
+
+        // Mobile Navigation Toggle
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.getElementById('navMenu');
+        
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close mobile menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Change header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 100) {
+                header.style.backgroundColor = 'rgba(255, 255, 255, 0.95)';
+                header.style.boxShadow = '0 5px 15px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.backgroundColor = 'white';
+                header.style.boxShadow = '0 2px 10px rgba(0, 0, 0, 0.1)';
+            }
+        });
+
+        // Tab functionality
+        function openTab(evt, tabName) {
+            const tabButtons = document.getElementsByClassName('tab-button');
+            const tabContents = document.getElementsByClassName('tab-content');
+            
+            for (let i = 0; i < tabContents.length; i++) {
+                tabContents[i].classList.remove('active');
+            }
+            
+            for (let i = 0; i < tabButtons.length; i++) {
+                tabButtons[i].classList.remove('active');
+            }
+            
+            document.getElementById(tabName).classList.add('active');
+            evt.currentTarget.classList.add('active');
+        }
+
+        // Gallery filter functionality
+        function filterGallery(category) {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const filterButtons = document.querySelectorAll('.filter-button');
+            
+            // Update active button
+            filterButtons.forEach(button => {
+                button.classList.remove('active');
+                if (button.getAttribute('onclick').includes(category)) {
+                    button.classList.add('active');
+                }
+            });
+            
+            // Filter gallery items
+            galleryItems.forEach(item => {
+                if (category === 'all' || item.getAttribute('data-category') === category) {
+                    item.style.display = 'block';
+                    // Re-trigger AOS animation
+                    item.classList.remove('aos-animate');
+                    setTimeout(() => {
+                        item.classList.add('aos-animate');
+                    }, 100);
+                } else {
+                    item.style.display = 'none';
+                }
+            });
+        }
+
+        // Back to top button
+        const backToTopButton = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 500) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Contact form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const subject = document.getElementById('subject').value;
+            const message = document.getElementById('message').value;
+            
+            // Here you would normally send the form data to a server
+            // For this example, we'll just show an alert
+            alert(`Terima kasih ${name}! Pesan Anda dengan subjek "${subject}" telah kami terima. Kami akan segera menghubungi Anda melalui email ${email}.`);
+            
+            // Reset the form
+            this.reset();
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80, // Adjust for header height
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
